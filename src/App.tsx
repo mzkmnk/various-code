@@ -3,7 +3,7 @@ import { Message } from './components/message';
 import "primereact/resources/themes/lara-light-cyan/theme.css";
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css'; 
-import { Workflow } from './components/workflow';
+import { Workflow } from './components/workflow/workflow';
 
 
 function App() {
