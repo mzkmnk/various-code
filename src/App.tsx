@@ -1,5 +1,5 @@
 import './App.css'
-import { Message } from './components/message';
+import { Message } from './components/message/message';
 import "primereact/resources/themes/lara-light-cyan/theme.css";
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css'; 
