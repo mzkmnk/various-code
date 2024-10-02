@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { TDraggingOffset, TWorkflowItem } from "./workflow.type";
 
 /** ロジック部分 */
 export const useWorkflow = ():{
@@ -7,14 +8,14 @@ export const useWorkflow = ():{
     handleMouseDown:(e:React.MouseEvent<HTMLDivElement>,index:number) => void,
     handleMouseMove:(e:React.MouseEvent<HTMLDivElement>) => void
 } => {
-    const [workflowItems,setWorkflowItems] = useState<{x:number,y:number,z:number}[]>([
+    const [workflowItems,setWorkflowItems] = useState<TWorkflowItem[]>([
         {x:0,y:0,z:0},
         {x:30,y:200,z:1},
         {x:80,y:100,z:2},
         {x:100,y:300,z:3},
     ]);
-    const [relativePositon,setRelativePosition] = useState<{x:number,y:number}>({x:0,y:0});
-    const [draggingOffset,setDraggingOffset] = useState<{isDragging:boolean,index?:number,x:number,y:number}>({isDragging:false,index:undefined,x:0,y:0});
+    const [relativePositon,setRelativePosition] = useState<Omit<TWorkflowItem,'z'>>({x:0,y:0});
+    const [draggingOffset,setDraggingOffset] = useState<TDraggingOffset>({isDragging:false,index:undefined,x:0,y:0});
 
     const relativeDivRef = useRef<HTMLDivElement>(null);
 

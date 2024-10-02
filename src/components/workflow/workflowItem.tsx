@@ -1,11 +1,13 @@
-export type WorkflowItemProps = {
+import { TWorkflowItem } from "./workflow.type"
+
+export type TWorkflowItemProps = {
     index:number,
-    item:{x:number,y:number,z:number},
+    item:TWorkflowItem,
     handleMouseDown:(e:React.MouseEvent<HTMLDivElement>,index:number) => void,
     handleMouseMove:(e:React.MouseEvent<HTMLDivElement>) => void,
 }
 
-export const WorkflowItem:React.FC<WorkflowItemProps> = (
+export const WorkflowItem:React.FC<TWorkflowItemProps> = (
     {
         index,
         item,
